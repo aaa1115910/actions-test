@@ -38,10 +38,10 @@ jobs:
           touch test_file_b.bin
           touch test_file_c.bin
           touch test_file_d.bin
-          cat aaa > test_file_a.bin
-          cat bbb > test_file_b.bin
-          cat ccc > test_file_c.bin
-          cat ddd > test_file_d.bin
+          echo aaa > test_file_a.bin
+          echo bbb > test_file_b.bin
+          echo ccc > test_file_c.bin
+          echo ddd > test_file_d.bin
 
       - name: archive file a
         uses: actions/upload-artifact@v3
