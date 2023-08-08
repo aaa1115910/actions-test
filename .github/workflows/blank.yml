@@ -38,6 +38,10 @@ jobs:
           touch test_file_b.bin
           touch test_file_c.bin
           touch test_file_d.bin
+          cat aaa > test_file_a.bin
+          cat bbb > test_file_b.bin
+          cat ccc > test_file_c.bin
+          cat ddd > test_file_d.bin
 
       - name: archive file a
         uses: actions/upload-artifact@v3
@@ -90,4 +94,15 @@ jobs:
   
       - name: Display structure of downloaded files
         run: ls -R
-          
+
+      - name: do sth
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 1
+          max_attempts: 5
+          command: |
+            cat test_file_a.bin
+            cat test_file_b.bin
+            cat test_file_c.bin
+            cat test_file_d.bin
+                  
