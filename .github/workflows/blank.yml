@@ -47,8 +47,8 @@ jobs:
           echo bbb > test_file_b.bin
           echo ccc > test_file_c.bin
           echo ddd > test_file_d.bin
-          echo "the_job_outputtt1=233" >> $GITHUB_OUTPUT
-          echo "the_job_outputtt2=556" >> $GITHUB_OUTPUT
+          echo "the_job_outputtt1=233" >> "$GITHUB_OUTPUT"
+          echo "the_job_outputtt2=556" >> "$GITHUB_OUTPUT"
 
       - name: archive file a
         uses: actions/upload-artifact@v3
@@ -119,6 +119,6 @@ jobs:
 
       - name: print output 2
         env:
-          OUTPUT1: ${{needs.build.outputs.the_job_outputtt1}}
-          OUTPUT2: ${{needs.build.outputs.the_job_outputtt2}}
+          OUTPUT1: ${{ needs.build.outputs.the_job_outputtt1 }}
+          OUTPUT2: ${{ needs.build.outputs.the_job_outputtt2 }}
         run: echo "$OUTPUT1 $OUTPUT2"
