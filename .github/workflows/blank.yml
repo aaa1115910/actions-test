@@ -115,12 +115,12 @@ jobs:
                   
       - name: print output 1
         run: |
-          echo "${{ needs.build.outputs.the_job_outputtt1 }} ${{ needs.build.outputs.the_job_outputtt2 }}"
+          echo "${{ needs.build.outputs.the_job_output1 }} ${{ needs.build.outputs.the_job_output2 }}"
 
       - name: print output 2
         env:
-          OUTPUT1: ${{ needs.build.outputs.the_job_outputtt1 }}
-          OUTPUT2: ${{ needs.build.outputs.the_job_outputtt2 }}
+          OUTPUT1: ${{ needs.build.outputs.the_job_output1 }}
+          OUTPUT2: ${{ needs.build.outputs.the_job_output2 }}
         run: echo "$OUTPUT1 $OUTPUT2"
   job1:
     runs-on: ubuntu-latest
