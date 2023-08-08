@@ -65,7 +65,7 @@ jobs:
 
   read:
     needs: build
-    runs-on: ubuntu-lastes
+    runs-on: ubuntu-latest
     steps: 
 
       - name: download archive Archive a
