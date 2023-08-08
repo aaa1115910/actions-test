@@ -113,6 +113,12 @@ jobs:
             cat test_file_c.bin
             cat test_file_d.bin
                   
-      - name: print output
+      - name: print output 1
         run: |
           echo "${{ needs.build.outputs.the_job_outputtt1 }} ${{ needs.build.outputs.the_job_outputtt2 }}"
+
+      - name: print output 2
+        env:
+          OUTPUT1: ${{needs.build.outputs.the_job_outputtt1}}
+          OUTPUT2: ${{needs.build.outputs.the_job_outputtt2}}
+        run: echo "$OUTPUT1 $OUTPUT2"
