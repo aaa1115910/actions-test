@@ -43,25 +43,25 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Archive a
-          path: app/build/outputs/apk/default/debug/test_file_a.bin
+          path: app/build/outputs/apk/default/alpha/test_file_a.bin
 
       - name: archive file b
         uses: actions/upload-artifact@v3
         with:
           name: Archive b
-          path: app/build/outputs/apk/default/debug/test_file_b.bin
+          path: app/build/outputs/apk/default/alpha/test_file_b.bin
 
       - name: archive file c
         uses: actions/upload-artifact@v3
         with:
           name: Archive c
-          path: app/build/outputs/apk/default/debug/test_file_c.bin
+          path: app/build/outputs/apk/default/alpha/test_file_c.bin
 
       - name: archive file d
         uses: actions/upload-artifact@v3
         with:
           name: Archive d
-          path: app/build/outputs/apk/default/debug/test_file_d.bin
+          path: app/build/outputs/apk/default/alpha/test_file_d.bin
 
   read:
     needs: build
