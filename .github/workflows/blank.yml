@@ -38,8 +38,12 @@ jobs:
       - name: set changelog to output
         id: up
         run: |
-          echo "changelog=$(git log -1 --pretty=short)" >> "$GITHUB_OUTPUT"
-          echo "changelog2=$(git log -1 --pretty=short)" >> $GITHUB_OUTPUT
+          echo "changelog<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$(git log -1 --pretty=short)" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "changelog2<<EOF" >> $GITHUB_OUTPUT
+          echo "$(git log -1 --pretty=short)" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
           
       # Runs a set of commands using the runners shell
       - name: Create test files
